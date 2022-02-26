@@ -6,20 +6,20 @@ import Logo from '../../public/Vector.svg'
 import '../TopBar/style.module.css'
 const Index = () => {
     return (
-        <div className='flex items-center justify-between pt-5 mb-20 px-5  '>
+        <div className='flex scroll items-center justify-between pt-5 mb-20 px-5 w-full  '>
 
             <div className="logo mr-12 ">
-                <Image src={Logo} />
+                <Image src={Logo}  />
             </div>
 
-            <div className="links flex-1 ">
+            <div className="links flex-1 lg:block hidden ">
 
-                <ul className='flex text-textColor font-normal text-base space-x-5 '>
-                    <li>Top offers</li>
-                    <li>Search in offers</li>
-                    <li> References</li>
-                    <li> About us</li>
-                    <li>Our team</li>
+                <ul className='flex text-textColor font-normal text-base space-x-5'>
+                    <li className=' cursor-pointer '>Top offers</li>
+                    <li className=' cursor-pointer '>Search in offers</li>
+                    <li className=' cursor-pointer '> References</li>
+                    <li className=' cursor-pointer '> About us</li>
+                    <li className=' cursor-pointer '>Our team</li>
                 </ul>
             </div>
 
