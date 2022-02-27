@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
 import Select from "react-select";
+import Range from "../Filter/Range/index";
 
 const Index = () => {
   const [selectedOption, setSelectedOption] = React.useState(null);
@@ -59,6 +60,17 @@ const Index = () => {
         options={options}
       />
       </div>
+
+
+<div className="justify-center flex w-4/6 items-center flex-col">
+
+  <div className="">
+
+<Range />
+
+  </div>
+
+</div>
       </div>
     </div>
   );

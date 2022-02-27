@@ -22,11 +22,11 @@ const Index = () => {
             <div className="links flex-1 lg:block hidden ">
 
                 <ul className='flex text-textColor font-normal text-base space-x-5'>
-                    <li className=' cursor-pointer '>Top offers</li>
-                    <li className=' cursor-pointer '>Search in offers</li>
-                    <li className=' cursor-pointer '> References</li>
-                    <li className=' cursor-pointer '> About us</li>
-                    <li className=' cursor-pointer '>Our team</li>
+                    <li className=' cursor-pointer hover:text-basic hover:font-medium '>Top offers</li>
+                    <li className=' cursor-pointer  hover:text-basic hover:font-medium'>Search in offers</li>
+                    <li className=' cursor-pointer hover:text-basic hover:font-medium'> References</li>
+                    <li className=' cursor-pointer hover:text-basic hover:font-medium '> About us</li>
+                    <li className=' cursor-pointer hover:text-basic hover:font-medium'>Our team</li>
                 </ul>
             </div>
 
