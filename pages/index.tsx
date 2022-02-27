@@ -4,7 +4,7 @@ import Home from '../components/Home/Index'
 
 const index = () => {
   return (
-    <div className='max-w-5xl mx-auto'>
+    <div className='max-w-5xl mx-auto p-5'>
 
       <Home />
 

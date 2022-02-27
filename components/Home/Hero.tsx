@@ -1,10 +1,29 @@
 /* eslint-disable react/jsx-key */
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import HeroImage from "../../public/hero.png";
+import HeroImage2 from "../../public/hero2.png";
 import { BiSearch } from "react-icons/bi";
 import { MdLocationPin } from "react-icons/md";
+
+
 const Hero = () => {
+
+  const [imageIndex, setImageIndex] = useState(0);
+  const images = [
+    "http://a5.mzstatic.com/us/r30/Purple5/v4/c1/2f/4c/c12f4cba-1d9a-f6bf-2240-04085d3470ec/icon175x175.jpeg",
+    "http://is2.mzstatic.com/image/thumb/Purple122/v4/d2/36/28/d23628e5-c9bf-d0fb-104f-61fa52976ff5/source/175x175bb.jpg"
+  ];
+
+
+  const changeImage = () => {
+    if (imageIndex === images.length - 1) {
+      setImageIndex(0);
+    } else {
+      setImageIndex(imageIndex + 1);
+    }
+  }
+
   return (
     <div className="grid lg:grid-cols-2 grid-cols-1 gap-20 items-center mb-20">
       <div className="text-container">
@@ -30,7 +49,7 @@ const Hero = () => {
           </div>
 
           <div className="button">
-            <button className="bg-basic font-bold shadow-2xl text-white rounded-md px-5 py-4 hover:bg-blue-300 flex items-center justify-center">
+            <button className="bg-basic w-full font-bold shadow-2xl text-white rounded-md px-5 py-4 hover:bg-blue-300 flex items-center justify-center">
               <BiSearch className="mr-2 font-bold text-lg" />
               Search
             </button>
@@ -38,8 +57,13 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="image_container">
-        <Image src={HeroImage} alt={"hero"} />
+      <div className="image_container section__img relative">
+        {/* <Image src={HeroImage} alt={"hero"} className="bottom absolute" /> */}
+
+        <Image src={HeroImage2} alt={"hero"} className="top absolute" />
+
+
+
       </div>
     </div>
   );
