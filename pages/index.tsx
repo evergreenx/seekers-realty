@@ -1,18 +1,35 @@
 /* eslint-disable react/jsx-key */
 import React from 'react'
 import Home from '../components/Home/Index'
+import Select from 'react-select';
 
-const index = () => {
+const Index = () => {
+
+  const [selectedOption, setSelectedOption] = React.useState(null);
+
+  const options = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' },
+  ];
+
+  const handleChange = () => {
+    setSelectedOption(selectedOption);
+  };
   return (
     <div className='max-w-5xl mx-auto p-5'>
 
       <Home />
 
 
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero consequatur, iure commodi quisquam dolorum dolore natus quibusdam adipisci neque sunt consequuntur repellat maiores iste, eius error sed in, possimus incidunt.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis enim, quas sunt omnis consectetur beatae tempore distinctio est magnam repudiandae ipsa quasi accusamus, tenetur consequuntur ea eum, eius similique tempora.
+      <Select
+        value={selectedOption}
+        onChange={handleChange}
+        options={options}
+      />
+
     </div>
   )
 }
 
-export default index
+export default Index
