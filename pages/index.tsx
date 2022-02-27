@@ -17,7 +17,7 @@ const Index = () => {
     setSelectedOption(selectedOption);
   };
   return (
-    <div className='max-w-5xl mx-auto p-5'>
+    <div className='custom__heading'>
 
       <Home />
 

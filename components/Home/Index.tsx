@@ -1,17 +1,19 @@
-import React from 'react'
-import Topbar from '../TopBar/Index'
-import Hero from './Hero'
-
+import React from "react";
+import Topbar from "../TopBar/Index";
+import Hero from "./Hero";
+import Footer from "../Footer/index";
 const index = () => {
-    return (
-        <div>
+  return (
+    <>
+      <div className="max-w-5xl mx-auto p-5">
+        <Topbar />
 
-            <Topbar />
+        <Hero />
+      </div>
 
+      <Footer />
+    </>
+  );
+};
 
-            <Hero />
-        </div>
-    )
-}
-
-export default index
+export default index;

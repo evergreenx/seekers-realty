@@ -5,10 +5,12 @@ import Logo from '../../public/logo2.svg'
 
 const index = () => {
     return (
-        <div className='bg-basic w-full h-80 p-5 flex flex-col items-center justify-center'>
+        <div className='bg-basic relative mb-0 top-0 w-full  text-lg text-white h-56 p-5 flex flex-col items-center justify-center'>
 
             <Image src={Logo} alt="logo" />
-            Seekers realty
+            <p>
+                Seekers realty
+            </p>
         </div>
     )
 }
