@@ -6,47 +6,29 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-@layer base {
+
+
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+
     .custom__heading {
       font-family: 'Merriweather', serif, system-ui, sans-serif;
     }
 
-    body{
-        font-family: 'Open Sans', sans-serif;
+    .filter__settings  {
+      display: flex;
+      flex-direction: row;
     }
-  }
-
-  .top{
-  
-      animation-name: fade;
-      animation-timing-function: ease-in-out;
-      animation-iteration-count: infinite;
-      animation-duration: 1s;
-      animation-direction: alternate;
-    
-    
-  }
-
-  .section__img{
-    /* position: relative; */
-  }
-  .section__img span img{
-   
-      /* position: absolute; */
-   
-  }
-
-  @keyframes fade {
-    0% {
-      opacity: 1;
+    .filter__settings:before, .filter__settings:after{
+      content: "";
+      flex: 1 1;
+      border-bottom: 1px solid #DADAEE;
+      margin: auto;
     }
-    25% {
-      opacity: 1;
+    .filter__settings:before {
+      margin-right: 10px
     }
-    75% {
-      opacity: 0;
+    .filter__settings:after {
+      margin-left: 10px
     }
-    100% {
-      opacity: 0;
-    }
-  }

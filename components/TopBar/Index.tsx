@@ -4,13 +4,20 @@ import React from 'react'
 import Image from 'next/image'
 import Logo from '../../public/Vector.svg'
 import '../TopBar/style.module.css'
+import Link from 'next/link'
 const Index = () => {
     return (
-        <div className='flex scroll items-center justify-between pt-5 mb-20 px-5 w-full  '>
+        <div className=' max-w-5xl mx-auto flex scroll items-center justify-between pt-10 mb-20 px-5 w-full  '>
 
-            <div className="logo mr-12 ">
+
+<Link href="/" passHref>
+
+<div className="mr-20 cursor-pointer">
                 <Image src={Logo}  />
-            </div>
+</div>
+</Link>
+
+            
 
             <div className="links flex-1 lg:block hidden ">
 
@@ -24,7 +31,7 @@ const Index = () => {
             </div>
 
             <div className="contact__us__button">
-                <button className=" bg-basic text-white rounded-md px-5 py-2 hover:bg-blue-300">
+                <button className=" shadow-xl bg-basic text-white rounded-md px-5 py-2 hover:bg-blue-300">
                     Contact us
                 </button>
             </div>
