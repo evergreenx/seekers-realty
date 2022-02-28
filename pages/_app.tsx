@@ -4,6 +4,7 @@ import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import TopBar from "../components/TopBar/Index";
 import Footer from "../components/Footer/";
+import Loader from "../components/Loader/";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -25,7 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       {pageLoading ? (
-        <h1>Loading</h1>
+       <Loader/>
       ) : (
         <>
           <TopBar />
