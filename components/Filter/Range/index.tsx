@@ -45,7 +45,8 @@ const AmountSlider = () => {
               height: "10px",
               display: "flex",
               width: "100%",
-              background: '#A3B1E1'
+            //   background: '#A3B1E1',
+            
             }}
           >
             <div
@@ -56,7 +57,7 @@ const AmountSlider = () => {
                 borderRadius: "4px",
                 background: getTrackBackground({
                   values,
-                  colors: ["#ccc", "#548BF4", "#ccc"],
+                  colors: ["#ccc", "#A3B1E1", "#ccc"],
                   min: MIN,
                   max: MAX,
                 }),
@@ -80,6 +81,7 @@ const AmountSlider = () => {
               justifyContent: "center",
               alignItems: "center",
               boxShadow: "0px 2px 6px #AAA",
+              border:'none'
             }}
           >
             <div

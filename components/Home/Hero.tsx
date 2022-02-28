@@ -7,8 +7,9 @@ import HeroImage2 from "../../public/hero2.png";
 import { BiSearch } from "react-icons/bi";
 import { MdLocationPin } from "react-icons/md";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Link from "next/link";
 
 const Hero = () => {
   const settings = {
@@ -22,7 +23,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="grid lg:grid-cols-2 grid-cols-1 gap-20 items-center mb-20 font-sans w-full">
+    <div className="grid lg:grid-cols-2 grid-cols-1 gap-20 items-center mb-20 font-sans container">
       <div className="text-container">
         <h2 className="text-textColor custom__heading text-6xl font-bold py-10">
           Modern Living for everyone
@@ -34,8 +35,8 @@ const Hero = () => {
           years.
         </p>
 
-        <div className="search mt-10 bg-[#F3F3FA] shadow-md flex-col lg:flex-row p-5 rounded-md flex items-center gap-5">
-          <div className="input__container  flex rounded-md px-3 border-2   items-center bg-white flex-1">
+        {/* <div className="search mt-10 bg-[#F3F3FA] shadow-md flex-col lg:flex-row p-5 rounded-md flex items-center gap-5"> */}
+        {/* <div className="input__container  flex rounded-md px-3 border-2   items-center bg-white flex-1">
             <MdLocationPin className="text-2xl text-gray-400" />
 
             <input
@@ -43,26 +44,26 @@ const Hero = () => {
               className="input p-4 w-full outline-none placeholder-black-500 shadow-2xl  font-bold "
               placeholder="Search for a property"
             />
-          </div>
+          </div> */}
 
-          <div className="button">
-            <button className="bg-basic w-full font-bold shadow-2xl text-white rounded-md px-5 py-4 hover:bg-blue-300 flex items-center justify-center">
+        <Link href="/filter" passHref>
+          <div className="py-5">
+            <button className="bg-basic py-4 font-bold shadow-2xl text-white rounded-md px-5  hover:bg-blue-300 flex items-center justify-center">
               <BiSearch className="mr-2 font-bold text-lg" />
-              Search
+              Explore offers
             </button>
           </div>
-        </div>
+        </Link>
       </div>
+      {/* </div> */}
 
-    
+      <div className="sliders__containers">
+        <Slider {...settings}>
+          <Image src={HeroImage} alt={"hero"} />
 
-      <Slider {...settings}>
-       
-      <Image src={HeroImage} alt={"hero"} className="bottom " />
-
-      <Image src={HeroImage2} alt={"hero"} className="top " />
-      
-      </Slider>
+          <Image src={HeroImage2} alt={"hero"} />
+        </Slider>
+      </div>
     </div>
     // </div>
   );
