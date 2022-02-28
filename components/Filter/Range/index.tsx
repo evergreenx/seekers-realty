@@ -24,6 +24,7 @@ const AmountSlider = () => {
       style={{
         display: "flex",
         justifyContent: "center",
+        alignItems: "center",
         flexWrap: "wrap",
       }}
     >
@@ -44,6 +45,7 @@ const AmountSlider = () => {
               height: "10px",
               display: "flex",
               width: "100%",
+              background: '#A3B1E1'
             }}
           >
             <div
@@ -72,8 +74,8 @@ const AmountSlider = () => {
               ...props.style,
               height: "22px",
               width: "22px",
-              borderRadius: "4px",
-              backgroundColor: "#FFF",
+              borderRadius: "50px",
+              backgroundColor: "#1C3988",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -84,7 +86,7 @@ const AmountSlider = () => {
               style={{
                 height: "16px",
                 width: "5px",
-                backgroundColor: isDragged ? "#548BF4" : "#CCC",
+                // backgroundColor: isDragged ? "red" : "#CCC",
               }}
             />
           </div>

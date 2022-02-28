@@ -62,7 +62,7 @@ const Index = () => {
       </div>
 
 
-<div className="justify-center flex w-4/6 items-center flex-col">
+<div className="justify-center w-3/4  mx-auto items-center flex-col">
 
   <div className="">
 
