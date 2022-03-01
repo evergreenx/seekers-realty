@@ -5,6 +5,9 @@ import { useRouter } from "next/router";
 import TopBar from "../components/TopBar/Index";
 import Footer from "../components/Footer/";
 import Loader from "../components/Loader/";
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
+
+const queryClient = new QueryClient()
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -25,6 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <QueryClientProvider client={queryClient}>
       {pageLoading ? (
        <Loader/>
       ) : (
@@ -34,6 +38,8 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Footer />
         </>
       )}
+
+</QueryClientProvider>
     </>
   );
 }
