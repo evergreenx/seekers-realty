@@ -1,24 +1,19 @@
 /* eslint-disable react/jsx-key */
 import React, { useState } from "react";
 import { Range, getTrackBackground } from "react-range";
+import { numFormatter } from "../../../utils/numFormatter";
 
-const numFormatter = (num: number) => {
-  if (num > 999 && num < 1000000) {
-    return (num / 1000).toFixed(0) + "K";
-  } else if (num >= 1000000) {
-    return (num / 1000000).toFixed(0) + "M";
-  } else if (num <= 999) {
-    return num;
-  }
 
-  return num;
-};
+type interfaceProps = {
+    minValue: number;
+  maxValue: number;
+}
 
-const AmountSlider = () => {
-  const [values, setValues] = useState([0, 100000000]);
+const AmountSlider = ({minValue , maxValue}: interfaceProps)  => {
+  const [values, setValues] = useState([0, 1000000]);
   const STEP = 1000;
   const MIN = 0;
-  const MAX = 100000000;
+  const MAX = maxValue;
   return (
     <div
       style={{
@@ -31,8 +26,8 @@ const AmountSlider = () => {
       <Range
         values={values}
         step={STEP}
-        min={MIN}
-        max={MAX}
+        min={minValue}
+        max={maxValue}
         onChange={(values) => {
           setValues(values);
         }}
@@ -95,9 +90,9 @@ const AmountSlider = () => {
         )}
       />
       <div id="output" className="flex justify-between mt-5 w-full ">
-        <p>{`د.إ ${numFormatter(values[0])} `}</p>
+        <p>{`د.إaed  ${numFormatter(values[0])} `}</p>
 
-        <p>{`د.إ  ${numFormatter(values[1])} `}</p>
+        <p>{`د.إaed   ${numFormatter(values[1])} `}</p>
       </div>
 
       <dd></dd>
