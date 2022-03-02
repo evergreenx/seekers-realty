@@ -44,7 +44,7 @@ const Index = () => {
     },
     headers: {
       "x-rapidapi-host": "bayut.p.rapidapi.com",
-      "x-rapidapi-key": "2f56c197d5mshf779d2fec591204p1bcbffjsn24d155b82ae2",
+      "x-rapidapi-key": "a0b235c575msh6b6911bc8928ab9p116993jsnac85cbf17f82",
     },
   };
 
@@ -59,9 +59,9 @@ const Index = () => {
     () =>
       // @ts-expect-error
 
-      axios(options).then((res) => res.data),
+      axios(options).then((res) => res.data)
 
-    {  cacheTime: 5 }
+    // {  cacheTime: 5 }
   );
   console.log(data);
 
@@ -157,7 +157,6 @@ const Index = () => {
         {/* {data?.hits.map((i: any) => ( */}
         <CardRow
           data={data?.hits}
-          key={data?.hits.id}
           isLoading={isLoading}
           isFetching={isFetching}
           error={error}

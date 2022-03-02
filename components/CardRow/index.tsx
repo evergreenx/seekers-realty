@@ -2,6 +2,7 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 type interfaceProps = {
   title: string;
@@ -10,6 +11,7 @@ type interfaceProps = {
   coverPhoto?: string[];
   id: string;
   url: string;
+  externalID: string;
 };
 
 const Index = ({ data, isLoading, isFetching, error }: any) => {
@@ -69,7 +71,9 @@ const Index = ({ data, isLoading, isFetching, error }: any) => {
           key={item.id}
           className=" bg-white  rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
         >
-          <a href="#">
+          {/* dynamic route  */}
+
+          <Link href={`/properties/${item.externalID}`} passHref>
             <Image
               width="444px"
               height="249px"
@@ -83,13 +87,12 @@ const Index = ({ data, isLoading, isFetching, error }: any) => {
               src={item?.coverPhoto?.url}
               alt=""
             />
-          </a>
-          <div className="p-5">
-            <a href="#">
-              <h5 className="custom__heading lowercase mb-2 text-xl font-bold   text-textColor dark:text-white">
-                {item.title.substring(0, 20)}
-              </h5>
-            </a>
+          </Link>
+          <div className="p-5 bg-">
+            <h5 className="custom__heading lowercase mb-2 text-xl font-bold   text-textColor dark:text-white">
+              {item.title.substring(0, 20)}
+            </h5>
+
             <p className="mb-3 font-bold text-base text-basic dark:text-gray-400">
               {item.price} Aed
             </p>

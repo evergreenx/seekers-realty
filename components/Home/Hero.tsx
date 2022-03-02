@@ -46,7 +46,7 @@ const Hero = () => {
             />
           </div> */}
 
-        <Link href="/filter" passHref>
+        <Link href="/properties/filter" passHref>
           <div className="py-5">
             <button className="bg-basic py-4 font-bold shadow-2xl text-white rounded-md px-5  hover:bg-blue-300 flex items-center justify-center">
               <BiSearch className="mr-2 font-bold text-lg" />
