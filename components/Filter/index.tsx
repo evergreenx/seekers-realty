@@ -59,7 +59,9 @@ const Index = () => {
     () =>
       // @ts-expect-error
 
-      axios(options).then((res) => res.data)
+      axios(options).then((res) => res.data),
+    { cacheTime: 5 ,refetchOnWindowFocus: false }
+
 
     // {  cacheTime: 5 }
   );

@@ -61,9 +61,7 @@ const Index = ({ data, isLoading, isFetching, error }: any) => {
     );
   }
 
-  if (error) {
-    return <div>Error!</div>;
-  }
+  if (error) return "An error has occurred: " + error.message;
   return (
     <>
       {data?.map((item: interfaceProps) => (
@@ -73,30 +71,31 @@ const Index = ({ data, isLoading, isFetching, error }: any) => {
         >
           {/* dynamic route  */}
 
+          <Image
+            width="444px"
+            height="249px"
+            /*   @ts-expect-error*/
+
+            blurDataURL={item.coverPhoto.url}
+            placeholder="blur"
+            className="rounded-t-lg w-full h-56"
+            /*   @ts-expect-error*/
+
+            src={item?.coverPhoto?.url}
+            alt=""
+          />
+
           <Link href={`/properties/${item.externalID}`} passHref>
-            <Image
-              width="444px"
-              height="249px"
-              /*   @ts-expect-error*/
+            <div className="p-5 cursor-pointer">
+              <h5 className="custom__heading capitalize mb-2 text-xl font-bold   text-textColor dark:text-white">
+                {item.title.toLowerCase().substring(0, 40)}
+              </h5>
 
-              blurDataURL={item.coverPhoto.url}
-              placeholder="blur"
-              className="rounded-t-lg w-full h-56"
-              /*   @ts-expect-error*/
-
-              src={item?.coverPhoto?.url}
-              alt=""
-            />
+              <p className="mb-3 font-bold text-base text-basic dark:text-gray-400">
+                {item.price} Aed
+              </p>
+            </div>
           </Link>
-          <div className="p-5 bg-">
-            <h5 className="custom__heading lowercase mb-2 text-xl font-bold   text-textColor dark:text-white">
-              {item.title.substring(0, 20)}
-            </h5>
-
-            <p className="mb-3 font-bold text-base text-basic dark:text-gray-400">
-              {item.price} Aed
-            </p>
-          </div>
         </div>
       ))}
 

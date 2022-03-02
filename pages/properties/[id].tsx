@@ -31,8 +31,7 @@ const PropertyDetails = () => {
 
       axios(options).then((res) => res.data),
 
-      
-    { cacheTime: 5 ,refetchOnWindowFocus: false }
+    { cacheTime: 5, refetchOnWindowFocus: false }
   );
   console.log(data);
 
@@ -79,61 +78,52 @@ const PropertyDetails = () => {
           />
         </svg>
       </div>
-    ); }
+    );
+  }
 
-    if (error){
-      // @ts-expect-error
-      return ("An error has occurred: " + error?.message);
-    
-    } 
+  if (error) {
+    // @ts-expect-error
+    return "An error has occurred: " + error?.message;
+  }
   if (data.length === 0) {
     return <div>No data</div>;
   }
 
   // alert(data?.geography.lat);
   return (
-    <div key={data?.id} className=" max-w-5xl h-full mx-auto p-5">
+    <div className="bg-[#F3F3FA] my-10">
+    <div key={data?.id} className=" max-w-5xl mb-20 mx-auto p-5">
       <div className="property__name custom__heading ">
         <h2 className="font-bold  text-textColor text-3xl">{data?.title}</h2>
       </div>
 
       <div className=" py-5">
-        <img
+        <Image
           src={data?.coverPhoto?.url}
           width="756px"
           height={"363px"}
           alt="property"
+          blurDataURL={data?.coverPhoto.url}
+          placeholder="blur"
           className="shadow-md rounded-md"
         />
       </div>
 
       <div className="property-info py-8 grid lg:grid-cols-3 grid-cols-1 gap-10 items-center justify-center">
         <div className="iv flex  items-center space-x-6">
-          <Image
-            src={companyIcon}
-     
-            alt="company icon"
-          />
+          <Image src={companyIcon} alt="company icon" />
 
           <h4 className="font-bold text-xl">{data?.category[0].name}</h4>
         </div>
 
         <div className="iv flex  items-center space-x-6">
-          <Image
-            src={landSizeIcon}
-         
-            alt="company icon"
-          />
+          <Image src={landSizeIcon} alt="company icon" />
 
           <h4 className="font-bold text-xl">{millify(data?.area)} sqft </h4>
         </div>
 
         <div className="iv flex  items-center space-x-6">
-          <Image
-            src={locationIcon}
-        
-            alt="company icon"
-          />
+          <Image src={locationIcon} alt="company icon" />
 
           <h4 className="font-bold text-xl">{data?.location[0].name}</h4>
         </div>
@@ -141,8 +131,10 @@ const PropertyDetails = () => {
 
       <div className="property__details">
         <div className="property__details__description py-8">
-          <h3 className="font-bold text-xl custom__heading mb-5 ">Description</h3>
-          <p className="text-textColor font-normal text-xl">
+          <h3 className="font-bold text-xl custom__heading mb-5 ">
+            Description
+          </h3>
+          <p className="text-textColor font-normal text-lg">
             {data?.description}
           </p>
         </div>
@@ -192,9 +184,10 @@ const PropertyDetails = () => {
 
       {/* @ts-ignore*/}
 
-      <div className="w-full container">
+      <div className="w-full map__contain container">
         <Map longitude={data?.geography.lng} latitude={data?.geography.lat} />
       </div>
+    </div>
     </div>
   );
 };

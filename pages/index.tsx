@@ -5,7 +5,7 @@ import Home from '../components/Home/Index'
 const Index = () => {
 
   return (
-    <div className='custom__heading container'>
+    <div className='custom__heading '>
 
       <Home />
 
