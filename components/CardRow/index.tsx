@@ -8,8 +8,7 @@ type interfaceProps = {
   title: string;
   price: number;
   location: string;
-  coverPhoto?: string[];
-  id: string;
+    id: string;
   url: string;
   externalID: string;
 };
@@ -17,6 +16,7 @@ type interfaceProps = {
 const Index = ({ data, isLoading, isFetching, error }: any) => {
   if (isLoading) {
     return (
+      <>
       <div className="flex items-center justify-center w-full max-w-5xl mx-auto p-5  py-10">
         <svg
           role="status"
@@ -35,11 +35,13 @@ const Index = ({ data, isLoading, isFetching, error }: any) => {
           />
         </svg>
       </div>
+      </>
     );
   }
 
   if (isFetching) {
     return (
+      <>
       <div className="flex items-center justify-center w-full max-w-5xl mx-auto p-5  py-10">
         <svg
           role="status"
@@ -58,10 +60,19 @@ const Index = ({ data, isLoading, isFetching, error }: any) => {
           />
         </svg>
       </div>
+      </>
     );
   }
 
-  if (error) return "An error has occurred: " + error.message;
+  if (error) {
+    return(
+        <>
+        
+           `An error has occurred:  ${error?.message}`
+        </>
+
+    ) 
+  }
   return (
     <>
       {data?.map((item: interfaceProps) => (
@@ -105,7 +116,11 @@ const Index = ({ data, isLoading, isFetching, error }: any) => {
         </div>
       )}
     </>
+
   );
+  
+
 };
+
 
 export default Index;

@@ -33,9 +33,13 @@ function MyApp({ Component, pageProps }: AppProps) {
        <Loader/>
       ) : (
         <>
+        <div className="flex flex-col min-h-screen">
+          <>
           <TopBar />
           <Component {...pageProps} />
           <Footer />
+          </>
+        </div>
         </>
       )}
 
