@@ -20,9 +20,9 @@ function Index({ longitude, latitude }: MapProps) {
         initialViewState={{
           longitude: longitude,
           latitude: latitude,
-          zoom: 3.5,
+          zoom: 1.5,
         }}
-        style={{ width: 600, height: 400 }}
+        style={{ width: '100%', height: 400 }}
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxAccessToken={TOKEN}
       />

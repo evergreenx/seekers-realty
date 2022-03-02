@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const index = () => {
   return (
-    <div className="bg-basic h-screen items-center flex justify-center flex-col ">
+    <div className="bg-basic  h-screen z-40 items-center flex justify-center flex-col ">
       <Image src={Logo2} alt="logo" className="animate-pulse" />
       <h2 className="animate-bounce py-3">
         <span className="text-white font-bold text-2xl animate-bounce">
