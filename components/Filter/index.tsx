@@ -54,21 +54,16 @@ const Index = () => {
 
   // e.preventDefault();
 
-  const { data, isFetching, isLoading, refetch } = useQuery(
+  const { data, error, isFetching, isLoading, refetch } = useQuery(
     "properties",
     () =>
       // @ts-expect-error
 
       axios(options).then((res) => res.data),
 
-    // { enabled: false, cacheTime: 1 }
+    { enabled: false, cacheTime: 1 }
   );
   console.log(data);
-
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <>
@@ -158,20 +153,17 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <div className="grid lg:grid-cols-3 grid-cols-2 max-w-5xl mx-auto p-5 gap-6">
-
-
-      {data?.hits.map((i: any) => (
-          <CardRow
-            id={i?.id}
-            title={i?.title}
-            price={i?.price}
-            coverImg={i?.coverPhoto.url}
-            location={i?.location.name}
-          />
-      ))}
-        </div>
-
+      <div className="grid lg:grid-cols-3 grid-cols-1 max-w-5xl mx-auto p-5 gap-6 items-center justify-center">
+        {/* {data?.hits.map((i: any) => ( */}
+        <CardRow
+          data={data?.hits}
+          key={data?.hits.id}
+          isLoading={isLoading}
+          isFetching={isFetching}
+          error={error}
+        />
+        {/* ))} */}
+      </div>
     </>
   );
 };
