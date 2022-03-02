@@ -8,7 +8,7 @@ import companyIcon from "../../public/company (2) 1.svg";
 import landSizeIcon from "../../public/dimensions 1.svg";
 import locationIcon from "../../public/pin 1.svg";
 import millify from "millify";
-import Map from '../../components/Map/index';
+import Map from '../../components/Map/';
 const PropertyDetails = () => {
   const router = useRouter();
   const { id } = router.query;
@@ -117,7 +117,7 @@ const PropertyDetails = () => {
       </div>
 
 
-      <div className="basic__characters">
+      <div className="basic__characters py-10">
         
         <div className="basic__characters__item">
           <h3 className="font-bold text-xl">Basic Characters</h3>
