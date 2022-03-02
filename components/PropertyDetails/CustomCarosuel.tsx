@@ -11,7 +11,7 @@ interface Props {
 
 const CustomCarosuel = ({photos}:Props) => {
     var settings = {
-        dots: true,
+        dots: false,
         infinite: false,
         speed: 500,
         slidesToShow: 3,
@@ -52,7 +52,7 @@ const CustomCarosuel = ({photos}:Props) => {
         return (
           <div
             className={className}
-            style={{ ...style, display: "block", background: "#1C3988" , color: "white" }}
+            style={{ ...style, display: "block", background: "#1C3988" , color: "white" ,borderRadius:50, fontSizeAdjust:0.5 }}
             onClick={onClick}
           />
         );
