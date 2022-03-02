@@ -1,7 +1,13 @@
+/* eslint-disable react/jsx-key */
 import * as React from "react";
-import Map from "react-map-gl";
+import Map, {
+  Marker,
 
+} from "react-map-gl";
+
+import Pin from "../../public/pin.svg";
 import "mapbox-gl/dist/mapbox-gl.css";
+import Image from "next/image";
 
 interface MapProps {
   latitude: any;
@@ -15,17 +21,20 @@ const TOKEN =
 function Index({ longitude, latitude }: MapProps) {
   return (
     <>
-     
       <Map
         initialViewState={{
           longitude: longitude,
           latitude: latitude,
-          zoom: 1.5,
+          zoom: 3.5,
         }}
-        style={{ width: '100%', height: 400 }}
+        style={{ width: "100%", height: 400 }}
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxAccessToken={TOKEN}
-      />
+      >
+        <Marker longitude={longitude} latitude={latitude} anchor="bottom">
+          <Image alt="marker" src={Pin} width={40} height={40} />
+        </Marker>
+      </Map>
     </>
   );
 }

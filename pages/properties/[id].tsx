@@ -111,8 +111,7 @@ const PropertyDetails = () => {
         <div className="iv flex  items-center space-x-6">
           <Image
             src={companyIcon}
-            width="100px"
-            height="100px"
+     
             alt="company icon"
           />
 
@@ -122,8 +121,7 @@ const PropertyDetails = () => {
         <div className="iv flex  items-center space-x-6">
           <Image
             src={landSizeIcon}
-            width="100px"
-            height="100px"
+         
             alt="company icon"
           />
 
@@ -133,8 +131,7 @@ const PropertyDetails = () => {
         <div className="iv flex  items-center space-x-6">
           <Image
             src={locationIcon}
-            width="100px"
-            height="100px"
+        
             alt="company icon"
           />
 
@@ -144,8 +141,8 @@ const PropertyDetails = () => {
 
       <div className="property__details">
         <div className="property__details__description py-8">
-          <h3 className="font-bold text-xl custom__heading ">Description</h3>
-          <p className="text-textColor font-normal text-lg">
+          <h3 className="font-bold text-xl custom__heading mb-5 ">Description</h3>
+          <p className="text-textColor font-normal text-xl">
             {data?.description}
           </p>
         </div>
@@ -153,7 +150,7 @@ const PropertyDetails = () => {
 
       <div className="basic__characters py-10">
         <div className="basic__characters__item">
-          <h3 className="font-bold text-xl custom__heading ">
+          <h3 className="font-bold text-xl custom__heading mb-5 ">
             Basic Characters
           </h3>
           <div className="flex flex-col space-y-4">
