@@ -67,7 +67,7 @@ const Index = ({ data, isLoading, isFetching, error }: any) => {
       {data?.map((item: interfaceProps) => (
         <div
           key={item.id}
-          className=" bg-white h-96 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+          className=" bg-white  rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
         >
           <a href="#">
             <Image

@@ -6,13 +6,13 @@ import Filtercmp from "../components/Filter/index";
 
 const Filter = () => (
   <>
-    <div className=" font-sans">
-      <div className="search__header bg-white text-center">
+    <div className=" font-sans ">
+      <div className="search__header bg-white text-center p-5">
         <h1 className="text-[#141B2D] font-bold text-5xl custom__heading">
           Search for an offer
         </h1>
 
-        <p className="py-5 text-xl">Choose from the most advantageous offers</p>
+        <p className="py-5 text-xl p-3">Choose from the most advantageous offers</p>
       </div>
 
       <Filtercmp />
