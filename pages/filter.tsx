@@ -6,7 +6,7 @@ import Filtercmp from "../components/Filter/index";
 
 const Filter = () => (
   <>
-    <div className=" h-screen font-sans">
+    <div className=" font-sans">
       <div className="search__header bg-white text-center">
         <h1 className="text-[#141B2D] font-bold text-5xl custom__heading">
           Search for an offer
@@ -17,7 +17,10 @@ const Filter = () => (
 
       <Filtercmp />
 
-      <div className="max-w-5xl mx-auto p-5"></div>
+      <div className="max-w-5xl mx-auto p-5">
+
+
+      </div>
     </div>
   </>
 );

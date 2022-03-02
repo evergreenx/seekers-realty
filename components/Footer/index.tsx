@@ -5,7 +5,7 @@ import Logo from '../../public/logo2.svg'
 
 const index = () => {
     return (
-        <div className='bg-basic mt-auto  w-full  text-lg text-white h-56 p-5 flex flex-col items-center justify-center'>
+        <div className='relative bg-basic mt-auto  w-full  text-lg text-white h-56 p-5 flex flex-col items-center justify-center'>
 
             <Image src={Logo} alt="logo" />
             <p>
