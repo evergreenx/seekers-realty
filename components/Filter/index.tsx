@@ -61,7 +61,7 @@ const Index = () => {
 
       axios(options).then((res) => res.data),
 
-    { enabled: false, cacheTime: 1 }
+    {  cacheTime: 5 }
   );
   console.log(data);
 
